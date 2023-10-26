@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            font-family: Tahoma, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://st2.depositphotos.com/16122460/43721/i/950/depositphotos_437218260-stock-photo-beautiful-succulent-plant-light-blue.jpg'); /* Replace with a valid image URL */
+            background-size: cover;
+        }
+        .tongThe{
+            background-color: white;
+            width: 350px;
+            height: 80vh;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .tieude{
+            text-align: center;
+        }
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around; /* Space out the icons */
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px; /* Set a fixed width to make them circular */
+            height: 30px; /* Set a fixed height to make them circular */
+            border-radius: 50%; /* Create a circular shape */
+            font-size: 15px; /* Adjust the size of the icon */
+        }
+
+        .facebook-icon {
+            margin-bottom: 110px;
+            margin-left: 140px;
+            background-color: white; /* Facebook blue color */
+            color: #1877f2;
+            box-shadow: 0 3px 10px 0 rgba(0,0,0,.14);
+        }
+
+        .google-icon {
+            margin-bottom: 110px;
+            margin-right: 140px;
+            background-color: white; /* Google blue color */
+            color: #1877f2;
+            box-shadow: 0 3px 10px 0 rgba(0,0,0,.14);
+        }
+
+        input{
+            width: 90%;
+            height: 40px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+
+        #sub{
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            background: darkorchid;
+            color: white;
+            margin-bottom: 40px;
+
+        }
+        p {
+            text-align: center;
+            font-size: 15px;
+        }
+        .signup {
+
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="tongThe">
+        <div class="tieude"> <h1> Sign In </h1> </div>
+
+        <div class="signin">
+            <div class="login">
+                <input class="dangNhap" id="idDangNhap" type="text" placeholder="username or email">
+                <span class="error" id="nameError"></span>
+            </div>
+
+            <div class="login">
+                <input class="dangNhap" id="pass" type="password" placeholder="password">
+                <span class="error" id="passError"></span>
+            </div>
+
+            <div class="login">
+                <button class="dangNhap" id="sub" type="submit" > SIGN IN </button>
+            </div>
+
+            <div >
+                <p id="text"> Or login with </p>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="facebook-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="google-icon">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+        </div>
+        <footer>
+            <p> Sign Up</p>
+        </footer>
+    </div>
+
+</main>
+<script>
+    document.getElementById('submitButton').addEventListener('click', function () {
+        const name = document.getElementById('idDangNhap');
+        const password = document.getElementById('pass');
+
+        const nameError = document.getElementById('nameError');
+        const passwordError = document.getElementById('passError');
+
+        nameError.textContent = '';
+        passwordError.textContent = '';
+
+        let isValid = true;
+
+        if (name.value.length < 3) {
+            nameError.textContent = 'Name must be at least 3 characters long';
+            name.style.borderColor = 'red';
+            isValid = false;
+        }
+
+        if (password.value.length < 8) {
+            passwordError.textContent = 'Password must be at least 8 characters long';
+            password.style.borderColor = 'red';
+            isValid = false;
+        }
+
+        if (!isValid) {
+            e.preventDefault(); // Prevent form submission if there are errors
+        }
+    });
+
+
+</script>
+</body>
+</html>

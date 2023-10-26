@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: Tahoma, Arial, sans-serif;
+}
+div{
+    margin: 0;
+    padding: 0;
+}
+.tongThe{
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    border: 1px solid black;
+}
+#idAccount{
+    margin-left: 70px;
+    color: chartreuse ;
+}
+li{
+    list-style-type: none;
+}
+#nam, #nu{
+    width: 50px;
+    height: 35px;
+}
+#idDate li{
+    color: chartreuse;
+    float: left;
+}
+#g1{
+    margin-left: -70px;
+}
+#d1{
+    margin-left: 35px;
+    margin-right: 250px;
+}
+.fullName i{
+    width: 20px;
+    padding: 10px;
+    border-left: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+.fullName input{
+    padding: 10px;
+    border: 1px solid #cccccc;
+    width: 600px;
+}
+.fullName  {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 70px;
+}
+.emailAddess{
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+}
+.emailAddess i{
+    width: 20px;
+    padding: 10px;
+    margin-bottom: 1px;
+    border-left: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+.emailAddess input{
+    width: 600px;
+    border: 1px solid #cccccc;
+    padding: 10.5px;
+}
+.pass{
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+}
+.pass i{
+    width: 20px;
+    padding: 10px;
+    border-left: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 21px;
+}
+#year{
+    width: 40px;
+    height: 35px;
+}
+#month{
+    width: 40px;
+    height: 35px;
+}
+#nam{
+    margin-left: 120px;
+}
+#day{
+
+    width: 40px;
+    height: 35px;
+}
+#dmy{
+    margin-right: 300px;
+    margin-left: 35px;
+}
+.date{
+    margin-bottom: 60px;
+}
+.pass input{
+    width: 600px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #cccccc;
+    padding: 10.5px;
+}

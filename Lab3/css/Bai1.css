@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: Tahoma, Arial, sans-serif;
+
+}
+p, ul, li{
+    padding: 0;
+    margin: 0;
+}
+#container{
+    width: 1100px;
+    margin: auto;
+
+}
+/* Chỉnh thanh menu*/
+ul.menu {
+    background: #eeeeee;
+    overflow: auto;
+    border-left: solid 6px #8b0000;
+    border-bottom: solid 2px #8b0000;
+
+}
+.sub-menu{
+    background: #eeeeee;
+}
+ul.sub-menu li.sub-item{
+    padding: 10px;
+}
+#idSub-Item {
+    border-bottom: 1px solid darkgrey;
+    border-top: 1px solid darkgrey;
+}
+ul.sub-menu{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -10px;
+    display: none;
+}
+ul.menu li.item:hover ul.sub-menu{
+    display: block;
+}
+/* bỏ dấu chấm trước từng dòng của thẻ li*/
+li{
+    list-style-type: none;
+}
+/* Chỉnh thành 1 hàng ngang*/
+  li.item {
+    float: left;
+     padding: 10px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     font-size: 120%;
+}
+  li.sub-item{
+      padding: 10px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      font-size: 120%;
+  }
+  li.sub-item:hover{
+      color: white;
+      background: #8b0000;
+  }
+
+ li.item:hover{
+     color: white;
+     background: #8b0000;
+ }

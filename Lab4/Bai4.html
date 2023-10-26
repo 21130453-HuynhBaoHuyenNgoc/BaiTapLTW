@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #calculateButton {
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <textarea id="inputA" rows="5" cols="50" placeholder="Enter text A"></textarea>
+    <input type="text" id="inputB" placeholder="Enter text B">
+    <button id="calculateButton">Calculate</button>
+    <p id="result"></p>
+</div>
+<script>
+    document.getElementById('calculateButton').addEventListener('click', function() {
+        const inputA = document.getElementById('inputA').value;
+        const inputB = document.getElementById('inputB').value;
+        const occurrences = countOccurrences(inputA, inputB);
+        document.getElementById('result').textContent = `Number of occurrences of B in A: ${occurrences}`;
+    });
+
+    function countOccurrences(textA, textB) {
+        if (!textA || !textB) {
+            return 0;
+        }
+
+        const regex = new RegExp(textB, 'g');
+        const matches = textA.match(regex);
+
+        return matches ? matches.length : 0;
+    }
+
+</script>
+</body>
+</html>

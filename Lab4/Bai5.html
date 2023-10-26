@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        #rotating-image {
+            transition: transform 1s; /* Chuyển đổi xoay */
+        }
+
+    </style>
+</head>
+<body>
+<div class="center">
+    <img id="rotating-image" src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/395896612_627342459615093_3930121703955969863_n.jpg?stp=dst-jpg_p600x600&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jorlEJ04TNoAX_m4TRI&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfB56yzkPIb_rxwMH8mjnmM-TYAqgmaCiK6dHGGuKmlwbg&oe=653F8436" alt="Rotating Image">
+</div>
+<script>
+    function rotateImage() {
+        const image = document.getElementById('rotating-image');
+        image.style.transform = 'rotate(15deg)';
+    }
+
+    setTimeout(rotateImage, 2000); // Xoay sau 2 giây
+
+</script>
+</body>
+</html>

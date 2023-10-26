@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            transition: background-color 0.5s;
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<button id="red">Red</button>
+<button id="green">Green</button>
+<button id="blue">Blue</button>
+<button id="yellow">Yellow</button>
+
+<script>
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.body.style.backgroundColor = button.style.backgroundColor;
+        });
+    });
+</script>
+</body>
+</html>

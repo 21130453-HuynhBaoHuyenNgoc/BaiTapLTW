@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #greeting {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 id="greeting">Hello, World!</h1>
+</div>
+<script>
+    const greetings = [
+        'Hello, World!',
+        'Hi there!',
+        'Welcome to our website!',
+        'Good day!',
+        'Greetings!',
+        'Hola!',
+        'Bonjour!',
+        'Ciao!'
+    ];
+
+    function getRandomGreeting() {
+        const randomIndex = Math.floor(Math.random() * greetings.length);
+        return greetings[randomIndex];
+    }
+
+    const greetingElement = document.getElementById('greeting');
+    greetingElement.textContent = getRandomGreeting();
+
+</script>
+</body>
+</html>
