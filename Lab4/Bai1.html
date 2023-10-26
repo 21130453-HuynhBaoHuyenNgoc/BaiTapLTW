@@ -4,49 +4,45 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        body {
-            transition: background-color 0.5s;
+        .container__button {
             text-align: center;
-            padding: 20px;
         }
-
-        button {
-            padding: 10px 20px;
-            margin: 10px;
+        .container__button > button{
+            width: 35%;
+            flex-wrap: wrap;
+            padding: 40px;
+            display: inline-block;
             cursor: pointer;
-        }
 
-        #red {
-            background-color: red;
-        }
-
-        #green {
-            background-color: green;
-        }
-
-        #blue {
-            background-color: blue;
-        }
-
-        #yellow {
-            background-color: yellow;
         }
     </style>
-</head>
 <body>
-<button id="red">Red</button>
-<button id="green">Green</button>
-<button id="blue">Blue</button>
-<button id="yellow">Yellow</button>
-
+<div class="container__button">
+    <button id="xanh" style ="background: #0db767" >Màu xanh</button>
+    <button id="do" style ="background: red">Màu đỏ</button>
+    <button id="tim" style ="background: violet">Màu tím</button>
+    <button id="vang" style ="background: yellow">Màu vàng</button>
+    <button id="xam" style ="background: grey">Màu xám</button>
+    <button id="hong" style ="background:pink">Màu hồng</button>
+</div>
 <script>
-    const buttons = document.querySelectorAll('button');
+        var green = document.getElementById("xanh");
+        var red =document.getElementById("do");
+        var violet =  document.getElementById("tim");
+        var yellow=  document.getElementById("vang");
+        var gray=  document.getElementById("xam");
+        var pink=  document.getElementById("hong");
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            document.body.style.backgroundColor = button.style.backgroundColor;
-        });
-    });
+        green.addEventListener("click", setColorBackGround);
+        red.addEventListener("click", setColorBackGround);
+        violet.addEventListener("click", setColorBackGround);
+        yellow.addEventListener("click", setColorBackGround);
+        gray.addEventListener("click", setColorBackGround);
+        pink.addEventListener("click", setColorBackGround);
+        function setColorBackGround () {
+        const btnColor = getComputedStyle(event.target).backgroundColor;
+        document.body.style.backgroundColor = btnColor;
+}
 </script>
 </body>
 </html>

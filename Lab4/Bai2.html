@@ -5,49 +5,100 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Quadratic Equation Solver</h1>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Đảm bảo div nằm giữa màn hình dọc */
+    }
 
-<form id="quadratic-form">
-    <label for="a">a:</label>
-    <input type="number" id="a" required><br>
+    .thamso {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .thamso .giaTri {
+        width: 33%;
+    }
+    .thamso .giaTri input {
+        width: 60%;
+    }
+    .ketqua {
+        margin-top: 20px;
+    }
+</style>
+<body>
 
-    <label for="b">b:</label>
-    <input type="number" id="b" required><br>
-
-    <label for="c">c:</label>
-    <input type="number" id="c" required><br>
-
-    <button type="submit">Solve</button>
-</form>
-
-<p id="result"></p>
-
+<div class="ptbac2">
+    <h1>Giải phương trình bậc 2</h1>
+    <h2>ax2+bx+c=0</h2>
+    <div class="thamso">
+        <div class="giaTri">
+            <label for="a">a</label>
+            <input type="text" id="a">
+        </div>
+        <div class="giaTri">
+            <label for="b">b</label>
+            <input type="text" id="b">
+        </div>
+        <div class="giaTri">
+            <label for="c">c</label>
+            <input type="text" id="c">
+        </div>
+    </div>
+    <button style="margin-top: 20px; width: 30%; background-color: #78aaf6" id="btnKetqua">Giải</button>
+    <div class="ketqua">
+        <label for="ketqua" style = "font-size: 20px;font-weight: 700" >Kết quả:</label>
+        <span id ="ketqua"></span>
+    </div>
+</div>
 <script>
-    const form = document.getElementById('quadratic-form');
-    const resultElement = document.getElementById('result');
+    var btnketQua = document.getElementById("btnKetqua");
+    btnketQua.addEventListener("click",ketQuaPT)
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
+    var ketQua = document.getElementById("ketqua");
+    function delta() {
+        var a = parseFloat(document.getElementById("a").value);
+        var b = parseFloat(document.getElementById("b").value);
+        var c = parseFloat(document.getElementById("c").value);
+        return Math.pow(b,2) - 4*(a*c);
 
-        const a = parseFloat(document.getElementById('a').value);
-        const b = parseFloat(document.getElementById('b').value);
-        const c = parseFloat(document.getElementById('c').value);
+    }
+    function deltaNhoHon0() {
+        return "Phương trình vô nghiệm";
+    }
+    function deltaBang0() {
+        var a = parseFloat(document.getElementById("a").value);
+        var b = parseFloat(document.getElementById("b").value);
+        var c = parseFloat(document.getElementById("c").value);
+        return -b/2*a;
+    }
+    function deltaLonHon0X1() {
+        var a = parseFloat(document.getElementById("a").value);
+        var b = parseFloat(document.getElementById("b").value);
+        var c = parseFloat(document.getElementById("c").value);
+        return (-b+ Math.sqrt(delta()))/(2*a)
 
-        const discriminant = b * b - 4 * a * c;
-
-        if (discriminant > 0) {
-            const x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-            const x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-            resultElement.textContent = `Two real roots: x1 = ${x1}, x2 = ${x2}`;
-        } else if (discriminant === 0) {
-            const x = -b / (2 * a);
-            resultElement.textContent = `One real root: x = ${x}`;
+    }
+    function deltaLonHon0X2() {
+        var a = parseFloat(document.getElementById("a").value);
+        var b = parseFloat(document.getElementById("b").value);
+        var c = parseFloat(document.getElementById("c").value);
+        return (-b- Math.sqrt(delta()))/(2*a)
+    }
+    function ketQuaPT() {
+        if (delta() < 0) {
+            ketQua.textContent = deltaNhoHon0();
+        } else if (delta() == 0) {
+            ketQua.textContent = "Phương trình có nghiệm kép: x1 = x2 =" + deltaBang0();
         } else {
-            const realPart = -b / (2 * a);
-            const imaginaryPart = Math.sqrt(-discriminant) / (2 * a);
-            resultElement.textContent = `Complex roots: x1 = ${realPart} + ${imaginaryPart}i, x2 = ${realPart} - ${imaginaryPart}i`;
+            ketQua.textContent = "Phương trình có 2 nghiệm phân biệt: "+ "x1 = " + deltaLonHon0X1() + "; x2 = " + deltaLonHon0X2();
         }
-    });
+    }
 </script>
 </body>
 </html>

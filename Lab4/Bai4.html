@@ -4,52 +4,71 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+        .input  {
+            width: 50%;
+            margin: auto;
+        }
+        .textArea #A, .textField #B {
+            width: 80%;
+            padding: 0 0 30px 0;
+            margin: 30px;
+            border: 1px solid mediumblue;
+        }
+
+        .result {
+            margin-top: 10px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+        }
+        .result #btn {
+            padding:20px ;
+            background-color: gray;
+            border: 1px solid red;
+            width: 20%;
+        }
+        .result span {
+            width: 75%;
+            font-weight: 700;
+            font-size: 20px;
+            display: flex;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
-
-        .container {
-            text-align: center;
-        }
-
-        #calculateButton {
-            margin: 10px;
-        }
-
     </style>
-</head>
 <body>
-<div class="container">
-    <textarea id="inputA" rows="5" cols="50" placeholder="Enter text A"></textarea>
-    <input type="text" id="inputB" placeholder="Enter text B">
-    <button id="calculateButton">Calculate</button>
-    <p id="result"></p>
+<div class="input">
+    <div class="textArea">
+        <textarea type="text" id="A" placeholder="Đây là textArea B có thể nhập 1 văn bản gồm nhiều dòng vào"></textarea>
+    </div>
+    <div class="textField">
+        <input type="text" id="B" placeholder="Đây là textField A có thể nhập vào 1 dòng văn bản">
+    </div>
+    <p>Kiểm tra số lần xuất hiện của A trong B</p>
+    <div class="result">
+        <button id = "btn">Kiểm tra</button>
+        <span id="ketQua"></span>
+    </div>
+
 </div>
 <script>
-    document.getElementById('calculateButton').addEventListener('click', function() {
-        const inputA = document.getElementById('inputA').value;
-        const inputB = document.getElementById('inputB').value;
-        const occurrences = countOccurrences(inputA, inputB);
-        document.getElementById('result').textContent = `Number of occurrences of B in A: ${occurrences}`;
-    });
+    var btnCheck = document.getElementById("btn");
+    btnCheck.addEventListener("click", check);
 
-    function countOccurrences(textA, textB) {
-        if (!textA || !textB) {
-            return 0;
-        }
-
-        const regex = new RegExp(textB, 'g');
-        const matches = textA.match(regex);
-
-        return matches ? matches.length : 0;
+    function check() {
+        var A = document.getElementById("A").value;
+        var B = document.getElementById("B").value;
+        var count =  countAInB(B, A);
+        document.getElementById("ketQua").innerHTML = "Số lần " + B +" xuất hiện trong " + A + " là:" + count;
     }
 
+    function countAInB(A, B) {
+        var count = 0;
+        var index = B.indexOf(A);
+        while(index !== -1) {
+            count++;
+            index = B.indexOf(A, index+1);
+        }
+        return count;
+    }
 </script>
 </body>
 </html>
